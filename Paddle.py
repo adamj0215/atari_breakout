@@ -1,19 +1,27 @@
 import pygame
 import random
+from settings import (
+    SCREEN_HEIGHT,
+    SCREEN_WIDTH,
+    BALL_RADIUS,
+    PADDLE_THICKNESS,
+    PADDLE_Y_FROM_BOTTOM,
+    PADDLE_WIDTH
+)
 
 class Paddle:
     def __init__(self):
-        self.x = 640
-        self.y = 680
+        self.x = SCREEN_WIDTH / 2
+        self.y = SCREEN_HEIGHT - PADDLE_THICKNESS
         self.speed = 20
 
     def draw(self, screen):
-        self.line = pygame.draw.line(screen, (255, 255, 255), (self.x - 60, 680), (self.x + 60, 680), 20)
+        self.line = pygame.draw.line(screen, (255, 255, 255), (self.x - PADDLE_WIDTH / 2, self.y), (self.x + PADDLE_WIDTH / 2, self.y), 20)
 
     def move(self, direction):
-        if direction == "left" and self.x > 60:
+        if direction == "left" and self.x > PADDLE_WIDTH / 2:
             self.x -= self.speed
-        elif direction == "right" and self.x < 1220:
+        elif direction == "right" and self.x < SCREEN_WIDTH - PADDLE_WIDTH / 2:
             self.x += self.speed
 
     def ball_collides(self, ball):

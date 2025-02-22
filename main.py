@@ -1,16 +1,17 @@
 import pygame
 from Ball import Ball
 from Paddle import Paddle
+from settings import SCREEN_WIDTH, SCREEN_HEIGHT
 
 pygame.init()
-screen = pygame.display.set_mode((1280, 720))
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Atari Breakout")
 clock = pygame.time.Clock()
 running = True
 
 pygame.font.init()
 
-ARIAL = pygame.font.SysFont("Arial",80, bold=True)
+ARIAL = pygame.font.SysFont("Arial", SCREEN_HEIGHT // 9, bold=True)
 
 ball = Ball()
 paddle = Paddle()
@@ -37,7 +38,7 @@ while running:
 
     if not ball.alive:
         game_over_text = ARIAL.render("GAME OVER", True, (255, 255, 255))
-        screen.blit(game_over_text, (640 - game_over_text.get_width() / 2, 360 - game_over_text.get_height() / 2))
+        screen.blit(game_over_text, (SCREEN_WIDTH / 2 - game_over_text.get_width() / 2, SCREEN_HEIGHT / 2 - game_over_text.get_height() / 2))
 
     pygame.display.flip()
 
