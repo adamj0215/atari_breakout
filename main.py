@@ -7,7 +7,7 @@ from settings import SCREEN_WIDTH, SCREEN_HEIGHT
 
 pygame.init()
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-pygame.display.set_caption("Atari Breakout")
+pygame.display.set_caption("ROE QUIZ")
 clock = pygame.time.Clock()
 running = True
 alive = True
