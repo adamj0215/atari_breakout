@@ -3,7 +3,7 @@ import random
 from settings import (
     SCREEN_HEIGHT,
     SCREEN_WIDTH,
-    BALL_RADIUS,
+    AMMO_RADIUS,
     PADDLE_THICKNESS,
     PADDLE_Y_FROM_BOTTOM,
     PADDLE_WIDTH
